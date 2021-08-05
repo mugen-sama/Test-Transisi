@@ -9,6 +9,7 @@
 <body>
     
 Nama : Sulton Daud Ul Mukarobin
+Email : sulton.mukarobin@gmail.com
 
 PHP Dasar I
 
@@ -186,6 +187,7 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
   echo "</table>";
 
 ?>
+
 
 
 
