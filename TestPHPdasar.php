@@ -93,13 +93,13 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
 
 <?php
 	
-	function generateUBT($input)
+	function UBT($input)
 	{
-		$arr_input = explode(' ', $input);
+		$array_input = explode(' ', $input);
 
 		// unigram
 		$unigram = '';
-		foreach ($arr_input as $item) {
+		foreach ($array_input as $item) {
 			$unigram .= $item.', ';
 		}
 		$unigram = substr($unigram, 0, -2);
@@ -107,7 +107,7 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
 		// bigram
 		$x = 0;
 		$bigram = '';
-		foreach ($arr_input as $item) {
+		foreach ($array_input as $item) {
 			if ($x < 1) {
 				$bigram .= $item.' ';
 				$x++;
@@ -121,7 +121,7 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
 		// trigram
 		$y = 0;
 		$trigram = '';
-		foreach ($arr_input as $item) {
+		foreach ($array_input as $item) {
 			if ($y < 2) {
 				$trigram .= $item.' ';
 				$y++;
@@ -140,11 +140,50 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
 		return $result;
 	}
 
-	echo generateUBT('Jakarta adalah ibukota negara Republik Indonesia');
-  
+	echo UBT('Jakarta adalah ibukota negara Republik Indonesia');
+    
 	// Unigram : Jakarta, adalah, ibukota, negara, Republik, Indonesia
 	// Bigram : Jakarta adalah, ibukota negara, Republik Indonesia
 	// Trigram : Jakarta adalah ibukota, negara Republik Indonesia
+
+?>
+
+4. Buatlah sebuah fungsi dalam PHP, yang apabila dipanggil akan menampilkan tabel berikut :
+
+<?php
+
+  # POLA : 
+  # 2 hitam - 2 putih - 1 hitam - 1 putih - 1 hitam - 2 putih - 2 hitam - 1 putih 
+
+  function pola($input){
+    $color['black']  = [1,2,5,7,10,11];
+    $color['white'] = [3,4,6,8,9,12];
+
+    if (in_array($input, $color['black'])) {
+      return 'style="background : black; color: white;"';
+    } else {
+      return 'style="background : white"';
+    }
+  } 
+
+  $no = 1;
+  $v = 1;
+  echo "<table>";
+  for($i = 0; $i < 8; $i++){
+   echo '<tr>';
+    for($x = 0; $x < 8; $x++){
+      echo '<td '.pola($v).'>';
+      echo $no++;
+      echo '</td>';
+      if ($v==12) {
+        $v = 1;
+      } else {
+        $v++;
+      }
+    }
+   echo '</tr>';
+  }
+  echo "</table>";
 
 ?>
 
