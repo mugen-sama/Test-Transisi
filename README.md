@@ -15,5 +15,6 @@
 <p> => Untuk register akun admin saya menggunakan db:seed /db seeder . Dengan akun email : admin@transisi.id dan password : transisi . </p>
 <p> => Untuk authtentikasi login admin saya buat dengan middleware auth dan saya tambahkan function isAdmin pada User Model . </p>
 <p> => Untuk Controller baru saya buatkan CompanyController dan EmployeeController menggunakan resource controller tetapi belum saya isi untuk function CRUD nya. </p>
-
+<p> => Untuk based User Interface nya saya menggunakan bawaan laravel yaitu laravel/ui -> material ui. Tetapi untuk menu nya belum sempat saya edit sesuai dengan CRUD Company dan Employee jadi masih bawaan. </p>
+    
     
